@@ -1,11 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOptionDto } from './dto/create-option.dto';
 import { UpdateOptionDto } from './dto/update-option.dto';
-import { CreateOptionUseCase } from './use-cases/create-option.use-case';
-import { ListOptionUseCase } from './use-cases/list-option.use-case';
-import { FindOneOptionUseCase } from './use-cases/findone-option.use-case';
-import { RemoveOptionUseCase } from './use-cases/remove-option.use-case';
-import { UpdateOptionUseCase } from './use-cases/update-option.use-case';
+import {
+  CreateOptionUseCase,
+  FindOneOptionUseCase,
+  ListOptionUseCase,
+  RemoveOptionUseCase,
+  UpdateOptionUseCase,
+} from './use-cases';
 
 @Injectable()
 export class OptionService {
