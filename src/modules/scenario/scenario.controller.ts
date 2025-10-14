@@ -16,8 +16,8 @@ export class ScenarioController {
   constructor(private readonly scenarioService: ScenarioService) {}
 
   @Post()
-  create(@Body() createScenarioDto: CreateScenarioDto) {
-    return this.scenarioService.create(createScenarioDto);
+  async create(@Body() createScenarioDto: CreateScenarioDto) {
+    this.scenarioService.create(createScenarioDto);
   }
 
   @Get()
