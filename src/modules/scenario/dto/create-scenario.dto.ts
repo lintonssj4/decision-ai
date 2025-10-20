@@ -5,5 +5,6 @@ export class CreateScenarioDto {
   @IsString()
   @ApiProperty()
   title: string;
+  @ApiProperty()
   description: string;
 }
