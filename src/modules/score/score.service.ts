@@ -1,11 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { CreateScoreDto } from './dto/create-score.dto';
 import { UpdateScoreDto } from './dto/update-score.dto';
+import { CreateScoreUseCase, FindOneScoreUseCase, ListScoreUseCase, RemoveScoreUseCase, UpdateScoreUseCase } from './use-cases';
 
 @Injectable()
 export class ScoreService {
+  constructor(
+    private readonly createScoreUseCase: CreateScoreUseCase,
+    private readonly listScoreUseCase: ListScoreUseCase,
+    private readonly findoneScoreUseCase: FindOneScoreUseCase,
+    private readonly removeScoreUseCase: RemoveScoreUseCase,
+    private readonly updateScoreUseCase: UpdateScoreUseCase,
+  ) {}
   create(createScoreDto: CreateScoreDto) {
-    return 'This action adds a new score';
+    return this.createScoreUseCase.execute(createScoreDto);
   }
 
   findAll() {
